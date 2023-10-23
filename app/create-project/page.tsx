@@ -5,17 +5,17 @@ import Modal from "@/components/Modal";
 import ProjectForm from "@/components/ProjectForm";
 
 const CreateProject = async () => {
-  const session = await getCurrentUser();
+	const session = await getCurrentUser();
 
-  if (!session?.user) redirect("/")
+	if (!session?.user) redirect("/");
 
-  return (
-    <Modal>
-      <h3 className="modal-head-text">Create a New Project</h3>
+	return (
+		<Modal>
+			<h3 className="modal-head-text">Create a new project</h3>
 
-      <ProjectForm type="create" session={session} />
-    </Modal>
-  );
+			<ProjectForm type="create" session={session} />
+		</Modal>
+	);
 };
 
 export default CreateProject;
